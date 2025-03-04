@@ -19,12 +19,17 @@ jobs:
 
       - name: Install Neo N3 Compiler
         run: |
-          dotnet tool install -g Neo.Compiler.MSIL
-          export PATH="$PATH:/github/home/.dotnet/tools"
+          # Clone the Neo N3 Compiler repository
+          git clone https://github.com/neo-project/neo-compiler.git
+          cd neo-compiler
+          dotnet build -c Release
+
+          # Add the compiler to PATH
+          echo "$(pwd)/neon/bin/Release/net6.0" >> $GITHUB_PATH
 
       - name: Compile Smart Contract
         run: |
-          neocsc HelloNeo.cs
+          neon HelloNeo.cs
           echo "Compilation complete!"
 
       - name: Upload Artifact
