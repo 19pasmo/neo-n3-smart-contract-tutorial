@@ -1,0 +1,26 @@
+name: Compile Neo N3 Smart Contract
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Install Neo N3 Compiler
+        run: dotnet tool install -g Neo.Compiler.MSIL
+
+      - name: Compile Smart Contract
+        run: |
+          neocsc HelloNeo.cs
+          echo "Compilation complete!"
