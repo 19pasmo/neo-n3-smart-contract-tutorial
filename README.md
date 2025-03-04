@@ -6,7 +6,7 @@ This tutorial will guide you through the process of writing, deploying, and inte
 
 ---
 
-## Prerequisites 
+## Prerequisites
 
 Before starting, ensure you have the following:
 1. **Neo N3 Testnet Account**: Create one using [NeoLine Wallet](https://neoline.io/).
