@@ -2,7 +2,7 @@
 A step-by-step guide to deploying and interacting with a smart contract on Neo N3.
 # How to Deploy and Interact with a Smart Contract on Neo N3
 
-This tutorial will guide you through the process of writing, deploying, and interacting with a simple smart contract on the Neo N3 blockchain. By the end of this tutorial, you will have a working smart contract and a basic understanding of Neo's development  tools.
+This tutorial will guide you through the process of writing, deploying, and interacting with a simple smart contract on the Neo N3 blockchain. By the end of this tutorial, you will have a working smart contract and a basic understanding of NEO's development  tools.
 
 ---
 
