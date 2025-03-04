@@ -2,3 +2,11 @@
   run: |
     dotnet tool install -g Neo.Compiler.MSIL
     export PATH="$PATH:/github/home/.dotnet/tools"
+- name: Compile Smart Contract
+  run: |
+    neocsc ./path/to/HelloNeo.cs
+    echo "Compilation complete!"
+on:
+  push:
+    branches:
+      - main
