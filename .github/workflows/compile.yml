@@ -17,15 +17,12 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
-      - name: Install Neo N3 Compiler
+      - name: Download Neo N3 Compiler
         run: |
-          # Clone the Neo N3 Compiler repository
-          git clone https://github.com/neo-project/neo-compiler.git
-          cd neo-compiler
-          dotnet build -c Release
-
-          # Add the compiler to PATH
-          echo "$(pwd)/neon/bin/Release/net6.0" >> $GITHUB_PATH
+          # Download the pre-built Neo N3 compiler
+          wget https://github.com/neo-project/neo-compiler/raw/master/neon/bin/Release/net6.0/neon
+          chmod +x neon
+          echo "$(pwd)" >> $GITHUB_PATH
 
       - name: Compile Smart Contract
         run: |
