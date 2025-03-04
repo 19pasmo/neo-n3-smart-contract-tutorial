@@ -20,7 +20,7 @@ jobs:
       - name: Download Neo N3 Compiler
         run: |
           # Download the pre-built Neo N3 compiler
-          wget https://github.com/neo-project/neo-compiler/releases/download/v3.6.0/neon-linux-x64.zip
+          wget https://github.com/neo-project/neo-compiler/releases/download/v3.5.0/neon-linux-x64.zip
           unzip neon-linux-x64.zip -d neon
           chmod +x neon/neon
           echo "$(pwd)/neon" >> $GITHUB_PATH
