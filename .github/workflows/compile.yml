@@ -20,13 +20,14 @@ jobs:
       - name: Download Neo N3 Compiler
         run: |
           # Download the pre-built Neo N3 compiler
-          wget https://github.com/neo-project/neo-compiler/raw/master/neon/bin/Release/net6.0/neon
-          chmod +x neon
-          echo "$(pwd)" >> $GITHUB_PATH
+          wget https://github.com/neo-project/neo-compiler/releases/download/v3.6.0/neon-linux-x64.zip
+          unzip neon-linux-x64.zip -d neon
+          chmod +x neon/neon
+          echo "$(pwd)/neon" >> $GITHUB_PATH
 
       - name: Compile Smart Contract
         run: |
-          neon HelloNeo.cs
+          neon/neon HelloNeo.cs
           echo "Compilation complete!"
 
       - name: Upload Artifact
